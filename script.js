@@ -2,7 +2,7 @@ var stars = [];
 let planetsData;
 let planetNames = ["soleil", "mercure", "venus", "terre", "mars", "jupiter", "saturne", "uranus", "neptune"];
 let soleil, mercure, venus, terre, mars, jupiter, saturne, uranus, neptune;
-let hoverSound;
+// let hoverSound;
 var api = 'https://api.le-systeme-solaire.net/rest/bodies/';
 var url;
 let info;
@@ -20,7 +20,7 @@ function preload() {
   uranus = loadImage("assets/uranus.png");
   neptune = loadImage("assets/neptune.png");
 
-  hoverSound = loadSound("assets/hover.mp3");
+  // hoverSound = loadSound("assets/hover.mp3");
 }
 
 function setup() {
@@ -90,8 +90,8 @@ function draw() {
 
 function checkMouseOverPlanet(x, y, w, h, planetName,img) {
   if ((mouseX > x && mouseX < x + w) && (mouseY > y && mouseY < y + h)) {
-    hoverSound.rate(map(w, 0, 200, 1, 1.3));
-    hoverSound.play();
+    // hoverSound.rate(map(w, 0, 200, 1, 1.3));
+    // hoverSound.play();
     if (!dataFetched) {
       url = api + planetName;
       loadJSON(url, gotData);
@@ -145,7 +145,7 @@ function checkMouseOverPlanet(x, y, w, h, planetName,img) {
       // pop()
     }
   } else {
-    hoverSound.stop();
+    // hoverSound.stop();
     dataFetched = false;
     info = '';
     // console.log("Mouse out");
